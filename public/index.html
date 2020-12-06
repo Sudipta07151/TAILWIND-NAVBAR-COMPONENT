@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class=" bg-gray-200">
+    
+    <div class="flex flex-col items-end  md:items-center md:justify-center">
+    <div class="burger-wrapper" class="relative">
+        <div class="burger block cursor-pointer relative md:hidden">
+            <div>
+                <span class="nav_span">&nbsp;</span>
+                <span class="nav_span">&nbsp;</span>
+                <span class="nav_span">&nbsp;</span>
+                <span class="nav_span">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <ul class="text-purple-600 font-mono font-bold md:flex md:text-2xl md:font-mono md:text-purple-600 md:font-bold">
+            <li class="pt-4 md:px-12 md:pt-4"><a href="#" class="md:p-2">HOME</a></li>
+            <li class="pt-4 md:px-12 md:pt-4"><a href="#" class="md:p-2">EXPLORE</a></li>
+            <li class="pt-4 md:px-12 md:pt-4"><a href="#" class="md:p-2">SEARCH</a></li>
+            <li class="pt-4 md:px-12 md:pt-4"><a href="#"class="md:p-2">LIBRARY</a></li>
+        </ul>
+    </div>
+    </div>
+</body>
+</html>
+
+<!-- <style>
+    html{
+        font-size: 10px;
+    }
+    body{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: #eee223;
+    }
+    .burger-wrapper{
+        display: block;
+        position: relative;
+    }
+    .burger{
+        width: 3.5rem;
+        display: block;
+        /*margin: 20rem auto;*/
+        cursor: pointer;
+    }
+    .burger span{
+        display: block;
+        margin-bottom: 0.40rem;
+        width: 3.5rem;
+        height: 0.50rem;
+        background-color: #eee;
+        position: relative;
+        top: 0;
+        transition: all ease-in-out 0.4s;
+    }
+    .burger-wrapper.open span:nth-child(2),
+    .burger-wrapper.open span:nth-child(3){
+        opacity: 0;
+        width: 0;
+    }
+    .burger-wrapper.open span:nth-child(1){
+        transform: rotate(-45deg);
+        top:1.2rem;
+    }
+    .burger-wrapper.open span:nth-child(4){
+        transform: rotate(45deg);
+        top:-1.4rem;
+    }
+</style> -->
+<script>
+    const burger_btn=document.querySelector('.burger-wrapper');
+    const burger=document.querySelector('.burger');
+    burger_btn.addEventListener('click',(e)=>{
+        // burger_btn.classList.toggle('open');
+        // console.log('clicked');
+        //console.log(burger.childNodes[1].children[0])
+        for(let i=0;i<=3;i++)
+        {
+            if(i==1 || i==2){
+                burger.childNodes[1].children[i].classList.toggle("opacity-0");
+                burger.childNodes[1].children[i].classList.toggle("w-0");
+            }      
+        }
+        burger.childNodes[1].children[3].classList.toggle("transform");
+        burger.childNodes[1].children[3].classList.toggle("-top-3");
+        burger.childNodes[1].children[3].classList.toggle("rotate-45");
+        burger.childNodes[1].children[0].classList.toggle("transform");
+        burger.childNodes[1].children[0].classList.toggle("top-3");
+        burger.childNodes[1].children[0].classList.toggle("-rotate-45");
+    })
+</script>
+
+<style>
+    .burger-wrapper{
+        -webkit-tap-highlight-color:transparent;
+    }
+    
+</style>

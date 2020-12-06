@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav_span{
+    @apply relative mb-1 block w-10 h-1 bg-purple-600 transition-all duration-300 ease-in-out; 
+}
