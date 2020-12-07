@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class=" bg-gray-200">
+<body class=" bg-background_yellow">
     
     <div class="flex flex-col items-end  md:items-center md:justify-center">
-    <div class="burger-wrapper" class="relative">
-        <div class="burger block cursor-pointer relative md:hidden">
-            <div>
-                <span class="nav_span">&nbsp;</span>
-                <span class="nav_span">&nbsp;</span>
-                <span class="nav_span">&nbsp;</span>
-                <span class="nav_span">&nbsp;</span>
+        <div class="burger-wrapper" class="relative">
+            <div class="burger block cursor-pointer relative md:hidden">
+                <div>
+                    <span class="nav_span">&nbsp;</span>
+                    <span class="nav_span">&nbsp;</span>
+                    <span class="nav_span">&nbsp;</span>
+                    <span class="nav_span">&nbsp;</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div>
-        <ul class="text-purple-600 font-mono font-bold md:flex md:text-2xl md:font-mono md:text-purple-600 md:font-bold">
-            <li class="pt-4 md:px-12 md:pt-4"><a href="#" class="md:p-2">HOME</a></li>
-            <li class="pt-4 md:px-12 md:pt-4"><a href="#" class="md:p-2">EXPLORE</a></li>
-            <li class="pt-4 md:px-12 md:pt-4"><a href="#" class="md:p-2">SEARCH</a></li>
-            <li class="pt-4 md:px-12 md:pt-4"><a href="#"class="md:p-2">LIBRARY</a></li>
-        </ul>
-    </div>
+        <div class=" flex items-center h-16 justify-between w-screen bg-gray-800">
+            <div class="flex items-center">
+                <img src="./img/logo.png" alt="logo" class=" w-12">
+                <span class="text-white text-xl font-logo_font uppercase">share zone</span>
+            </div>
+            <ul class="text-purple-600 font-bold md:flex md:text-2xl md:font-mono md:text-white md:font-navbar_font">
+                <li class="pt-4 md:px-12 md:pt-4"><a href="#" >HOME</a></li>
+                <li class="pt-4 md:px-12 md:pt-4"><a href="#" >EXPLORE</a></li>
+                <li class="pt-4 md:px-12 md:pt-4"><a href="#" >SEARCH</a></li>
+                <li class="pt-4 md:px-12 md:pt-4"><a href="#" >LIBRARY</a></li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
@@ -101,6 +108,49 @@
 <style>
     .burger-wrapper{
         -webkit-tap-highlight-color:transparent;
+    }
+    a{
+        position:relative;
+    }
+    a::before{
+        content:'';
+        background-color: rgb(0, 185, 231);
+        width: 15px;
+        height: 4px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: all ease-in 0.2s;
+    }
+    a::after{
+        content:'';
+        background-color:orange;
+        width: 15px;
+        height: 4px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        transition: all ease-in 0.2s;
+    }
+    a:hover::before{
+        content:'';
+        background-color: rgb(0, 185, 231);
+        transform: translateX(100%);
+        width: 50%;
+        height: 4px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+    a:hover::after{
+        content:'';
+        background-color: orange;
+        transform: translateX(-100%);
+        width: 50%;
+        height: 4px;
+        position: absolute;
+        top: 100%;
+        right: 0;
     }
     
 </style>
